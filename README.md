@@ -1,3 +1,47 @@
+Assignment: Caching the Inverse of a Matrix
+
+###makeCacheMatrix
+makeCacheMatrix <- function(x = matrix()) {
+invr <- NULL
+set <- function(y) {
+x <<- y
+invr <<- NULL
+}
+get <- function() x
+setinverse <- function(inverse) invr <<- inverse
+getinverse <- function() invr
+list(set=set, get=get, 
+setinverse=setinverse, getinverse = getinverse)
+}
+
+###makeCacheMatrix
+
+cacheSolve <- function(x, ...) {
+invr <= x$getinverse()
+if(!is.null(invr)) {
+message("Getting Cached Data:-")
+return(invr)
+}
+matrx <- x$get()
+invr <- solve(matrx, ...)
+x$setinverse(invr)
+invr
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Introduction
 
 This second programming assignment will require you to write an R
